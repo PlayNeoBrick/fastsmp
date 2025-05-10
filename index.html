@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast SMP – Minecraft Server</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .hero-bg {
+      background-image: url('https://i.imgur.com/lh3xwGv.jpeg'); /* Vyměň za svůj obrázek */
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white scroll-smooth">
+
+  <!-- Navigace -->
+  <nav class="fixed w-full bg-black bg-opacity-70 backdrop-blur z-50 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🌐 Fast SMP</h1>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#o-nas" class="hover:text-green-400 transition">O nás</a>
+        <a href="#vyhody" class="hover:text-green-400 transition">Výhody</a>
+        <a href="#galerie" class="hover:text-green-400 transition">Galerie</a>
+        <a href="#kontakt" class="hover:text-green-400 transition">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg h-screen flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="text-center relative z-10 px-6" data-aos="fade-up">
+      <h2 class="text-5xl md:text-6xl font-bold mb-4">Fast SMP</h2>
+      <p class="text-xl mb-6">Připoj se na nejlepší český survival SMP server!</p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="https://discord.gg/XMyxdYcdcE" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition duration-300">Discord</a>
+        <div class="bg-gray-800 px-6 py-3 rounded-full font-mono shadow-lg">
+          IP: <strong>play.fastsmp.cz</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O nás -->
+  <section id="o-nas" class="py-20 container mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-6">🔍 O serveru Fast SMP</h2>
+    <p class="max-w-2xl mx-auto text-lg text-gray-300">Fast SMP je komunitní survival server bez pay-to-win, bez lagů a s aktivní komunitou. Žádné zbytečné pluginy – jen čistý zážitek z Minecraftu s pár vylepšeními.</p>
+  </section>
+
+  <!-- Výhody -->
+  <section id="vyhody" class="bg-gray-800 py-20" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10">🚀 Co nabízíme</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">⚙️ Optimalizace</h3>
+          <p>Pluginy, které neškodí zážitku, ale ho vylepšují.</p>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">👥 Komunita</h3>
+          <p>Každý hráč je vítán, máme přátelské prostředí a spravedlivá pravidla.</p>
+        </div>
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+          <h3 class="text-xl font-semibold mb-2">💡 Zkušený tým</h3>
+          <p>Admini a moderátoři se starají o čistou hru a pomoc hráčům.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="py-20 container mx-auto px-6 text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-10">🖼️ Galerie</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <img src="https://i.imgur.com/oT3sEPr.jpg" class="rounded-lg shadow-lg" alt="screenshot1">
+      <img src="https://i.imgur.com/DbC9IlZ.jpg" class="rounded-lg shadow-lg" alt="screenshot2">
+      <img src="https://i.imgur.com/M6f2XZU.jpg" class="rounded-lg shadow-lg" alt="screenshot3">
+    </div>
+  </section>
+
+  <!-- Kontakt / Discord embed -->
+  <section id="kontakt" class="bg-gray-800 py-20" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">📬 Připoj se k nám na Discordu</h2>
+      <p class="mb-6">Zeptej se na cokoliv, najdi spoluhráče nebo sleduj novinky ze serveru.</p>
+      <iframe src="https://discord.com/widget?id=1206969501860001812&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" class="mx-auto rounded-lg shadow-lg"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-6 text-gray-400">
+    <p>&copy; 2025 Fast SMP. Vyrobeno s ♥ pro Minecraft komunitu.</p>
+  </footer>
+
+  <!-- AOS knihovna -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
