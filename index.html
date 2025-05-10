@@ -12,6 +12,22 @@
       background-size: cover;
       background-position: center;
     }
+
+    /* Příkazy při hoveru */
+    .hover-grow:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Animace textu pro "fade-up" efekt */
+    .aos-fade-up {
+      animation: fadeUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white scroll-smooth">
@@ -37,8 +53,8 @@
       <h2 class="text-5xl md:text-6xl font-bold mb-4">Fast SMP</h2>
       <p class="text-xl mb-6">Připoj se na nejlepší český survival SMP server!</p>
       <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="https://discord.gg/XMyxdYcdcE" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition duration-300">Discord</a>
-        <div class="bg-gray-800 px-6 py-3 rounded-full font-mono shadow-lg">
+        <a href="https://discord.gg/XMyxdYcdcE" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition duration-300 hover-grow">Discord</a>
+        <div class="bg-gray-800 px-6 py-3 rounded-full font-mono shadow-lg hover-grow">
           IP: <strong>privatesmp.mc.hostify.cz</strong>
         </div>
       </div>
@@ -56,15 +72,15 @@
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-10">🚀 Co nabízíme</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition hover-grow">
           <h3 class="text-xl font-semibold mb-2">⚙️ Optimalizace</h3>
           <p>Pluginy, které neškodí zážitku, ale ho vylepšují.</p>
         </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition hover-grow">
           <h3 class="text-xl font-semibold mb-2">👥 Komunita</h3>
           <p>Každý hráč je vítán, máme přátelské prostředí a spravedlivá pravidla.</p>
         </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition hover-grow">
           <h3 class="text-xl font-semibold mb-2">💡 Zkušený tým</h3>
           <p>Admini a moderátoři se starají o čistou hru a pomoc hráčům.</p>
         </div>
@@ -78,17 +94,17 @@
       <h2 class="text-3xl font-bold mb-6">💥 Glitche a Příkazy na Glitch SMP</h2>
       <p class="max-w-2xl mx-auto text-lg text-gray-300 mb-6">Na našem serveru máme několik zábavných glitchů a unikátních příkazů, které umožní hráčům vyzkoušet nové možnosti. Zde je několik příkladů:</p>
       
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6 hover-grow">
         <h3 class="text-xl font-semibold mb-2">-/glitches</h3>
         <p>Tento příkaz zobrazí seznam dostupných glitchů, které můžeš použít nebo si prohlédnout.</p>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6 hover-grow">
         <h3 class="text-xl font-semibold mb-2">-/glitchsmp:withdraw</h3>
         <p>Pomocí tohoto příkazu si můžeš vybrat položky nebo zdroje, které máš uložené v glitchech.</p>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg mb-6 hover-grow">
         <h3 class="text-xl font-semibold mb-2">-/glitchsmp:unequip</h3>
         <p>Tento příkaz ti umožní odložit nebo zrušit vybavení, které máš spojené s glitchem.</p>
       </div>
@@ -101,9 +117,9 @@
   <section id="galerie" class="py-20 container mx-auto px-6 text-center" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-10">🖼️ Galerie</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <img src="https://i.imgur.com/oT3sEPr.jpg" class="rounded-lg shadow-lg" alt="screenshot1">
-      <img src="https://i.imgur.com/DbC9IlZ.jpg" class="rounded-lg shadow-lg" alt="screenshot2">
-      <img src="https://i.imgur.com/M6f2XZU.jpg" class="rounded-lg shadow-lg" alt="screenshot3">
+      <img src="https://i.imgur.com/oT3sEPr.jpg" class="rounded-lg shadow-lg hover-grow" alt="screenshot1">
+      <img src="https://i.imgur.com/DbC9IlZ.jpg" class="rounded-lg shadow-lg hover-grow" alt="screenshot2">
+      <img src="https://i.imgur.com/M6f2XZU.jpg" class="rounded-lg shadow-lg hover-grow" alt="screenshot3">
     </div>
   </section>
 
@@ -112,7 +128,7 @@
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-6">📬 Připoj se k nám na Discordu</h2>
       <p class="mb-6">Zeptej se na cokoliv, najdi spoluhráče nebo sleduj novinky ze serveru.</p>
-      <iframe src="https://discord.com/widget?id=1345478780965224580&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" class="mx-auto rounded-lg shadow-lg"></iframe>
+      <iframe src="https://discord.com/widget?id=1345478780965224580&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" class="mx-auto rounded-lg shadow-lg hover-grow"></iframe>
     </div>
   </section>
 
