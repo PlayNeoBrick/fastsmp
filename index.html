@@ -3,154 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fast SMP – Minecraft Server</title>
+  <title>Mythic SMP – Whitelist</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
-    .hero-bg {
-      background-image: url('https://i.imgur.com/lh3xwGv.jpeg');
+    .mythic-bg {
+      background-image: url('https://i.imgur.com/1IcnS1U.jpeg');
       background-size: cover;
       background-position: center;
     }
-    .hover-grow:hover {
-      transform: scale(1.03);
-      transition: transform 0.3s ease;
+    .hover-glow:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
+      transform: scale(1.02);
+      transition: all 0.3s ease;
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white scroll-smooth">
+<body class="bg-gray-950 text-gray-200 scroll-smooth font-serif">
 
-  <!-- Navigace -->
-  <nav class="fixed w-full bg-black bg-opacity-70 backdrop-blur z-50 shadow-md">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-2xl font-bold">🌐 Fast SMP</h1>
-      <div class="space-x-6 hidden md:flex">
-        <a href="#o-nas" class="hover:text-green-400 transition">O nás</a>
-        <a href="#vyhody" class="hover:text-green-400 transition">Výhody</a>
-        <a href="#galerie" class="hover:text-green-400 transition">Galerie</a>
-        <a href="#kontakt" class="hover:text-green-400 transition">Kontakt</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero-bg h-screen flex items-center justify-center relative">
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <!-- Úvod -->
+  <section class="mythic-bg h-screen flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-black bg-opacity-80"></div>
     <div class="text-center relative z-10 px-6" data-aos="fade-up">
-      <h2 class="text-5xl md:text-6xl font-bold mb-4">Fast SMP</h2>
-      <p class="text-xl mb-6">Připoj se na nejlepší český survival SMP server!</p>
-      <div class="flex flex-col md:flex-row justify-center gap-4">
-        <a href="https://discord.gg/XMyxdYcdcE" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full shadow-lg transition duration-300">Discord</a>
-        <div class="bg-gray-800 px-6 py-3 rounded-full font-mono shadow-lg">
-          IP: <strong>privatesmp.mc.hostify.cz</strong>
-        </div>
-      </div>
+      <h1 class="text-6xl font-bold mb-4 text-green-400 drop-shadow-lg">Mythic SMP</h1>
+      <p class="text-xl text-gray-300 mb-6 italic">Vstup jen pro vyvolené... přežiješ mezi legendami?</p>
+      <a href="#whitelist" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition">Žádost o Whitelist</a>
     </div>
   </section>
 
-  <!-- O nás -->
-  <section id="o-nas" class="py-20 container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6">🔍 O serveru Fast SMP</h2>
-    <p class="max-w-2xl mx-auto text-lg text-gray-300">Fast SMP je komunitní survival server bez pay-to-win, bez lagů a s aktivní komunitou. Žádné zbytečné pluginy – jen čistý zážitek z Minecraftu s pár vylepšeními.</p>
-  </section>
+  <!-- Whitelist sekce -->
+  <section id="whitelist" class="py-20 bg-gray-900" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center max-w-xl">
+      <h2 class="text-4xl font-bold mb-4 text-green-400">🔮 Žádost o Whitelist</h2>
+      <p class="mb-6 text-gray-400">Vyplň tento formulář a pokud jsi hoden, budeš přijat.</p>
+      <form id="whitelistForm" class="bg-gray-800 p-6 rounded-xl shadow-xl hover-glow space-y-4">
+        <input type="text" name="nickname" id="nickname" placeholder="Tvé Minecraft jméno" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
+        <textarea name="reason" id="reason" placeholder="Proč chceš na Mythic SMP?" rows="4" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500"></textarea>
 
-  <!-- Začátek 1. fáze – Glich SMP -->
-  <section id="faze-1" class="bg-gradient-to-r from-green-800 to-green-600 py-20" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center text-white">
-      <h2 class="text-4xl font-bold mb-4">🔥 Začátek 1. fáze – Glich SMP</h2>
-      <p class="text-xl mb-6">📅 <strong>11. 5. – 22. 5.</strong></p>
-      <p class="max-w-2xl mx-auto text-lg mb-8">
-        První fáze našeho světa právě začíná. Všichni hráči startují od nuly – bez výhod, bez portů, jen čistý survival s glich twistem. Buduj, přežívej, tvoř aliance a připrav se na nečekané události. Tahle fáze je základní kámen celého světa, tak ji nepropásni!
-      </p>
-      <div class="bg-gray-900 p-6 rounded-xl shadow-lg max-w-2xl mx-auto hover-grow">
-        <ul class="list-disc list-inside text-left text-gray-300 text-lg space-y-2">
-          <li>Survival s glitchem – unikátní zážitky z každého dne.</li>
-          <li>Zakládání týmů a prvních komunit.</li>
-          <li>PvP aktivní mimo bezpečné zóny.</li>
-          <li>Eventy a odměny pro aktivní hráče.</li>
-        </ul>
-      </div>
-      <p class="mt-6 text-sm text-gray-200 italic">🔒 Po skončení fáze 1 bude spuštěna další – připrav se na nové mechaniky!</p>
-    </div>
-  </section>
+        <!-- CAPTCHA -->
+        <label for="captcha" class="block text-left text-sm text-gray-400">Napiš slovo <strong>drak</strong>:</label>
+        <input type="text" id="captcha" name="captcha" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
 
-  <!-- Výhody -->
-  <section id="vyhody" class="bg-gray-800 py-20" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-10">🚀 Co nabízíme</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">⚙️ Optimalizace</h3>
-          <p>Pluginy, které neškodí zážitku, ale ho vylepšují.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">👥 Komunita</h3>
-          <p>Každý hráč je vítán, máme přátelské prostředí a spravedlivá pravidla.</p>
-        </div>
-        <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition">
-          <h3 class="text-xl font-semibold mb-2">💡 Zkušený tým</h3>
-          <p>Admini a moderátoři se starají o čistou hru a pomoc hráčům.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Galerie -->
-  <section id="galerie" class="py-20 container mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-10">🖼️ Galerie</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <img src="https://i.imgur.com/oT3sEPr.jpg" class="rounded-lg shadow-lg" alt="screenshot1">
-      <img src="https://i.imgur.com/DbC9IlZ.jpg" class="rounded-lg shadow-lg" alt="screenshot2">
-      <img src="https://i.imgur.com/M6f2XZU.jpg" class="rounded-lg shadow-lg" alt="screenshot3">
-    </div>
-  </section>
-
-  <!-- Glitche -->
-  <section id="glitche" class="bg-black py-20" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6 text-green-400">🧪 Glitche, jak fungují</h2>
-      <div class="max-w-xl mx-auto bg-gray-800 p-6 rounded-xl shadow-lg hover-grow">
-        <ul class="list-disc list-inside text-left text-gray-300 text-lg space-y-2">
-          <li><code>/glitches</code> – zobrazí seznam funkčních glitchů.</li>
-          <li><code>/glitchsmp:withdraw</code> – vybereš od sebe gliche/li>
-          <li><code>/glitchsmp:unequip</code> – sundá glitchnuté itemy.</li>
-        </ul>
-      </div>
-      <p class="mt-4 text-gray-500 text-sm">Pozor: využívání glitchů je na vlastní riziko, ale u nás máš zelenou!</p>
-    </div>
-  </section>
-
-  <!-- Pravidla týmů -->
-  <section id="pravidla-teamu" class="bg-gray-900 py-20" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">📜 Pravidla týmů</h2>
-      <p class="text-lg text-gray-300 mb-4">Aby byl server spravedlivý a zábavný pro všechny, platí tato pravidla pro týmy a aliance:</p>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-lg max-w-xl mx-auto hover-grow">
-        <ul class="text-left list-disc list-inside text-gray-200 text-lg">
-          <li><strong>Maximálně 4 hráči</strong> v jednom týmu.</li>
-          <li><strong>Maximálně 6 hráčů</strong> v alianci (více týmů dohromady).</li>
-        </ul>
-      </div>
-      <p class="mt-6 text-gray-400 text-sm">Porušení těchto pravidel může vést k varování nebo trestu od moderátorů.</p>
-    </div>
-  </section>
-
-  <!-- Kontakt / Discord embed -->
-  <section id="kontakt" class="bg-gray-800 py-20" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">📬 Připoj se k nám na Discordu</h2>
-      <p class="mb-6">Zeptej se na cokoliv, najdi spoluhráče nebo sleduj novinky ze serveru.</p>
-      <iframe src="https://discord.com/widget?id=1345478780965224580&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" class="mx-auto rounded-lg shadow-lg"></iframe>
+        <button type="submit" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full text-white font-semibold transition">Odeslat</button>
+        <p id="formStatus" class="text-sm mt-4"></p>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-center py-6 text-gray-400">
-    <p>&copy; 2025 Fast SMP. Vyrobeno s ♥ pro Minecraft komunitu.</p>
+  <footer class="bg-black text-center py-6 text-gray-500 mt-12">
+    <p>&copy; 2025 Mythic SMP. Jen ti, kdo věří v legendy, přežijí...</p>
   </footer>
 
-  <!-- AOS knihovna -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
+
+  <!-- Discord webhook a CAPTCHA logika -->
+  <script>
+    const form = document.getElementById('whitelistForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nickname = document.getElementById('nickname').value.trim();
+      const reason = document.getElementById('reason').value.trim();
+      const captcha = document.getElementById('captcha').value.trim().toLowerCase();
+
+      if (captcha !== 'drak') {
+        status.textContent = '⚠️ CAPTCHA je nesprávná. Napiš přesně slovo "drak".';
+        status.className = 'text-red-400';
+        return;
+      }
+
+      const webhookURL = "https://discord.com/api/webhooks/1371207892434292746/apSgWBQB5vihRunXwWcMwXsJC4SsE5mHC11P62NhstVKXxUikkk0nc5Ugu9uWFsMmNP_";
+
+      const payload = {
+        username: "Whitelist Žádost",
+        embeds: [{
+          title: "📝 Nová whitelist žádost",
+          color: 65280,
+          fields: [
+            { name: "👤 Nickname", value: nickname, inline: false },
+            { name: "📜 Důvod", value: reason, inline: false }
+          ],
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        const response = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          status.textContent = '✅ Žádost byla odeslána. Odpověď najdeš na Discordu.';
+          status.className = 'text-green-400';
+          form.reset();
+        } else {
+          throw new Error('Chyba při odesílání');
+        }
+      } catch (error) {
+        status.textContent = '❌ Odeslání selhalo. Zkus to později.';
+        status.className = 'text-red-400';
+      }
+    });
+  </script>
 </body>
 </html>
