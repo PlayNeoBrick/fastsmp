@@ -6,7 +6,14 @@
   <title>Mythic SMP – Pravidla a Whitelist</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Press Start 2P', cursive;
+    }
     .hover-glow:hover {
       box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
       transform: scale(1.02);
@@ -21,91 +28,109 @@
     }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-200 scroll-smooth font-serif relative overflow-x-hidden">
+<body class="bg-gray-950 text-gray-200 scroll-smooth relative overflow-x-hidden">
 
   <canvas id="stars"></canvas>
 
   <!-- Úvod -->
-  <section class="h-screen flex items-center justify-center relative bg-black bg-opacity-80 z-10">
+  <section class="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-black to-gray-900 z-10">
     <div class="text-center px-6" data-aos="fade-up">
-      <h1 class="text-6xl font-bold mb-4 text-green-400 drop-shadow-lg">Mythic SMP</h1>
-      <p class="text-xl text-gray-300 mb-6 italic">Vstup jen pro vyvolené... přežiješ mezi legendami?</p>
-      <a href="#whitelist" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition">Žádost o Whitelist</a>
+      <h1 class="text-5xl text-green-400 drop-shadow-lg mb-6">Mythic SMP</h1>
+      <p class="text-lg text-gray-300 mb-8 italic">Vstup jen pro vyvolené... přežiješ mezi legendami?</p>
+      <a href="#whitelist" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition hover:scale-105 hover-glow">
+        Žádost o Whitelist
+      </a>
     </div>
   </section>
 
   <!-- Pravidla -->
-  <section id="rules" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center max-w-3xl">
-      <h2 class="text-4xl font-bold mb-4 text-green-400">⚖️ Pravidla Mythic SMP</h2>
+<section id="rules" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
+  <div class="container mx-auto px-6 text-center max-w-3xl">
+    <h2 class="text-3xl text-green-400 mb-8">⚖️ Pravidla serveru</h2>
 
-      <div class="text-left text-gray-400 space-y-6">
-            <div class="text-left text-gray-400 space-y-6">
-        <h3 class="text-2xl text-green-400">Zakázané cheaty a exploity</h3>
+    <!-- Vyhledávací pole -->
+    <input 
+      type="text" 
+      id="searchRules" 
+      placeholder="🔍 Hledat v pravidlech..." 
+      class="mb-8 w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+
+    <!-- Pravidla -->
+    <div id="rulesList" class="text-left text-gray-400 space-y-6 text-sm leading-relaxed">
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">⛔ Cheaty a exploity</h3>
         <ul class="list-disc pl-5">
-          <li>Jakýkoliv druh cheatů nebo exploitů je zakázán, včetně jakékoliv zmínky o jejich používání nebo držení.</li>
-          <li>Pokud bude jakákoliv zakázaná věc nalezena, hráč bude okamžitě zabanován.</li>
-        </ul>
-
-        <h3 class="text-2xl text-green-400">Pokyny pro AT (administrátory)</h3>
-        <p>Řiďte se pokyny administrátorů (AT), kteří mají plnou pravomoc v rozhodování o porušení pravidel.</p>
-
-        <h3 class="text-2xl text-green-400">Zákaz Endu</h3>
-        <p>End je zakázán pro všechny hráče na serveru. Návštěvy Endu nejsou povoleny.</p>
-
-        <h3 class="text-2xl text-green-400">Pravidla pro PvP</h3>
-        <ul class="list-disc pl-5">
-          <li>Combat log (útěk ze souboje tím, že se odpojíš) je zakázán.</li>
-          <li>BedPvP v Netheru je zakázán.</li>
-          <li>Spawnkill (neustálé zabíjení hráčů bez přestávky) je zakázán.</li>
-          <li>Stavění trapek na spawnu je zakázáno.</li>
-        </ul>
-
-        <h3 class="text-2xl text-green-400">Pravidla pro Base</h3>
-        <ul class="list-disc pl-5">
-          <li>Lootění chestek je povoleno.</li>
-          <li>Ničení chestek nebo pracovních stolů (např. knihovny, enchantment stoly, anvilka) je povoleno.</li>
-          <li>Ničení redstone mechanizmů je povoleno.</li>
-          <li>Zabíjení viligerů je zakázáno.</li>
-          <li>Griefing (úmyslné ničení cizího majetku) je zakázáno.</li>
-        </ul>
-
-        <h3 class="text-2xl text-green-400">Hráčská pravidla</h3>
-        <ul class="list-disc pl-5">
-          <li>Nadávání je povoleno, pokud je v hranicích slušnosti.</li>
-          <li>Floodování (neustálé spamování chatu) a CAPSLOCK je zakázán.</li>
-          <li>Teamy jsou povoleny do 4 hráčů, aliance do 6 hráčů.</li>
-        </ul>
-
-        <h3 class="text-2xl text-green-400">Pravidla Teamů a Aliancí</h3>
-        <ul class="list-disc pl-5">
-          <li>Spolupráce mezi aliancemi je povolena, ale nesmí docházet k souběžnému boji.</li>
-          <li>Každá aliance musí mít vlastní baseku (základnu).</li>
-        </ul>
-
-        <h3 class="text-2xl text-green-400">Závěrečná pravidla</h3>
-        <ul class="list-disc pl-5">
-          <li>Disrespekt vůči AT může vést k permanentnímu banu.</li>
-          <li>Server si vyhrazuje právo trestat i za věci, které nejsou přímo uvedeny v pravidlech, ale mohou být z nich vyvozeny.</li>
-          <li>Pravidla se mohou kdykoliv změnit, avšak pro problémy vzniklé před změnou pravidel platí stará pravidla.</li>
+          <li>Žádné cheaty nebo hacky.</li>
+          <li>Použití zakázaných nástrojů = okamžitý ban.</li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <!-- Whitelist sekce -->
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">🛡️ Administrace</h3>
+        <p>Administrátoři mají finální slovo. Respektuj jejich rozhodnutí.</p>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">🚫 End je zakázán</h3>
+        <p>End dimenze je uzavřená pro všechny hráče.</p>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">⚔️ PvP pravidla</h3>
+        <ul class="list-disc pl-5">
+          <li>Combat log = zakázán.</li>
+          <li>BedPvP v Netheru = zakázán.</li>
+          <li>Spawnkill a pasti = zakázány.</li>
+        </ul>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">🏰 Pravidla pro základny</h3>
+        <ul class="list-disc pl-5">
+          <li>Lootovat můžeš.</li>
+          <li>Griefing a ničení vesničanů = zakázáno.</li>
+        </ul>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">🧍 Pravidla chování</h3>
+        <ul class="list-disc pl-5">
+          <li>Sprostá slova tolerujeme, spam ne.</li>
+          <li>Teamy max 4 hráči, aliance max 6.</li>
+        </ul>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">🏹 Teamplay</h3>
+        <ul class="list-disc pl-5">
+          <li>Aliance nesmí bojovat společně proti ostatním.</li>
+        </ul>
+      </div>
+
+      <div class="rule-item">
+        <h3 class="text-xl text-green-300">📜 Závěrečné</h3>
+        <ul class="list-disc pl-5">
+          <li>Neznalost pravidel neomlouvá.</li>
+          <li>Pravidla se mohou změnit.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Whitelist -->
   <section id="whitelist" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center max-w-xl">
-      <h2 class="text-4xl font-bold mb-4 text-green-400">🔮 Žádost o Whitelist</h2>
-      <p class="mb-6 text-gray-400">Vyplň tento formulář a pokud jsi hoden, budeš přijat.</p>
-      <form id="whitelistForm" class="bg-gray-800 p-6 rounded-xl shadow-xl hover-glow space-y-4">
-        <input type="text" name="nickname" id="nickname" placeholder="Tvé Minecraft jméno" required minlength="3" autocomplete="off" class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
-        <textarea name="reason" id="reason" placeholder="Proč chceš na Mythic SMP?" rows="4" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500"></textarea>
-
-        <!-- CAPTCHA -->
+      <h2 class="text-3xl text-green-400 mb-4">📝 Žádost o Whitelist</h2>
+      <p class="text-gray-400 mb-6">Vyplň a uvidíme, jestli jsi hoden přijetí...</p>
+      <form id="whitelistForm" class="bg-gray-800/80 backdrop-blur-md p-6 rounded-xl shadow-xl hover-glow space-y-4">
+        <input type="text" name="nickname" placeholder="Minecraft jméno" required minlength="3" autocomplete="off" class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
+        <textarea name="reason" placeholder="Proč chceš na server?" rows="4" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500"></textarea>
         <label for="captcha" class="block text-left text-sm text-gray-400">Napiš slovo <strong>drak</strong>:</label>
         <input type="text" id="captcha" name="captcha" required autocomplete="off" class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
-
         <button type="submit" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full text-white font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2">
           Odeslat
         </button>
@@ -114,27 +139,25 @@
     </div>
   </section>
 
-  <!-- Discord pozvánka -->
+  <!-- Discord -->
   <section id="discord" class="py-20 bg-black bg-opacity-80 z-10" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center max-w-xl">
-      <h2 class="text-4xl font-bold mb-4 text-green-400">📣 Přidej se k nám na Discord!</h2>
-      <p class="mb-6 text-gray-400">Zeptej se, najdi tým nebo sleduj novinky přímo u zdroje.</p>
+      <h2 class="text-3xl text-green-400 mb-4">📣 Přidej se k nám na Discord!</h2>
+      <p class="mb-6 text-gray-400">Najdi tým, ptej se, nebo sleduj novinky.</p>
       <a href="https://discord.gg/xqKvHRJY" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full transition hover-glow">
-        Připojit se na Discord
+        Připojit se
       </a>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black text-center py-6 text-gray-500 z-10 relative">
-    <p>&copy; 2025 Mythic SMP. Jen ti, kdo věří v legendy, přežijí...</p>
+  <footer class="bg-black text-center py-6 text-gray-500 z-10 relative text-sm">
+    <p>&copy; 2025 Mythic SMP – Pouze ti, kdo věří v legendy, přežijí...</p>
   </footer>
 
-  <!-- AOS -->
+  <!-- Skripty -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
-
-  <!-- Hvězdy na pozadí -->
   <script>
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
@@ -144,7 +167,6 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
@@ -172,24 +194,21 @@
       });
       requestAnimationFrame(drawStars);
     }
-
     drawStars();
   </script>
 
-  <!-- Webhook logika -->
   <script>
     const form = document.getElementById('whitelistForm');
     const status = document.getElementById('formStatus');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const nickname = document.getElementById('nickname').value.trim();
-      const reason = document.getElementById('reason').value.trim();
-      const captcha = document.getElementById('captcha').value.trim().toLowerCase();
+      const nickname = form.nickname.value.trim();
+      const reason = form.reason.value.trim();
+      const captcha = form.captcha.value.trim().toLowerCase();
 
       if (captcha !== 'drak') {
-        status.textContent = '⚠️ CAPTCHA je nesprávná. Napiš přesně slovo "drak".';
+        status.textContent = '⚠️ Napiš přesně slovo "drak".';
         status.className = 'text-red-400';
         return;
       }
@@ -202,8 +221,8 @@
           title: "📝 Nová whitelist žádost",
           color: 65280,
           fields: [
-            { name: "👤 Nickname", value: nickname, inline: false },
-            { name: "📜 Důvod", value: reason, inline: false }
+            { name: "👤 Nickname", value: nickname },
+            { name: "📜 Důvod", value: reason }
           ],
           timestamp: new Date().toISOString()
         }]
@@ -217,14 +236,14 @@
         });
 
         if (response.ok) {
-          status.textContent = '✅ Žádost byla odeslána. Sleduj odpověď na Discordu.';
+          status.textContent = '✅ Odesláno. Sleduj odpověď na Discordu.';
           status.className = 'text-green-400';
           form.reset();
         } else {
-          throw new Error('Chyba při odesílání');
+          throw new Error('Chyba');
         }
-      } catch (error) {
-        status.textContent = '❌ Odeslání selhalo. Zkus to později.';
+      } catch {
+        status.textContent = '❌ Něco se pokazilo. Zkus to znovu.';
         status.className = 'text-red-400';
       }
     });
