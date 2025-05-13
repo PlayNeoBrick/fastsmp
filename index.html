@@ -12,25 +12,35 @@
       transform: scale(1.02);
       transition: all 0.3s ease;
     }
+    canvas#stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
   </style>
 </head>
-<body class="bg-gray-950 text-gray-200 scroll-smooth font-serif">
+<body class="bg-gray-950 text-gray-200 scroll-smooth font-serif relative overflow-x-hidden">
 
-  <!-- Úvod bez obrázku -->
-  <section class="h-screen flex items-center justify-center relative bg-black bg-opacity-80">
-    <div class="text-center relative z-10 px-6" data-aos="fade-up">
+  <canvas id="stars"></canvas>
+
+  <!-- Úvod -->
+  <section class="h-screen flex items-center justify-center relative bg-black bg-opacity-80 z-10">
+    <div class="text-center px-6" data-aos="fade-up">
       <h1 class="text-6xl font-bold mb-4 text-green-400 drop-shadow-lg">Mythic SMP</h1>
       <p class="text-xl text-gray-300 mb-6 italic">Vstup jen pro vyvolené... přežiješ mezi legendami?</p>
       <a href="#whitelist" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition">Žádost o Whitelist</a>
     </div>
   </section>
 
-  <!-- Pravidla sekce -->
-  <section class="py-20 bg-gray-900" data-aos="fade-up">
+  <!-- Pravidla -->
+  <section id="rules" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center max-w-3xl">
       <h2 class="text-4xl font-bold mb-4 text-green-400">⚖️ Pravidla Mythic SMP</h2>
 
       <div class="text-left text-gray-400 space-y-6">
+            <div class="text-left text-gray-400 space-y-6">
         <h3 class="text-2xl text-green-400">Zakázané cheaty a exploity</h3>
         <ul class="list-disc pl-5">
           <li>Jakýkoliv druh cheatů nebo exploitů je zakázán, včetně jakékoliv zmínky o jejich používání nebo držení.</li>
@@ -84,26 +94,39 @@
   </section>
 
   <!-- Whitelist sekce -->
-  <section id="whitelist" class="py-20 bg-gray-900" data-aos="fade-up">
+  <section id="whitelist" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center max-w-xl">
       <h2 class="text-4xl font-bold mb-4 text-green-400">🔮 Žádost o Whitelist</h2>
       <p class="mb-6 text-gray-400">Vyplň tento formulář a pokud jsi hoden, budeš přijat.</p>
       <form id="whitelistForm" class="bg-gray-800 p-6 rounded-xl shadow-xl hover-glow space-y-4">
-        <input type="text" name="nickname" id="nickname" placeholder="Tvé Minecraft jméno" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
+        <input type="text" name="nickname" id="nickname" placeholder="Tvé Minecraft jméno" required minlength="3" autocomplete="off" class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
         <textarea name="reason" id="reason" placeholder="Proč chceš na Mythic SMP?" rows="4" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500"></textarea>
 
         <!-- CAPTCHA -->
         <label for="captcha" class="block text-left text-sm text-gray-400">Napiš slovo <strong>drak</strong>:</label>
-        <input type="text" id="captcha" name="captcha" required class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
+        <input type="text" id="captcha" name="captcha" required autocomplete="off" class="w-full p-3 rounded bg-gray-900 text-white placeholder-gray-500">
 
-        <button type="submit" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full text-white font-semibold transition">Odeslat</button>
+        <button type="submit" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full text-white font-semibold transition transform hover:scale-105 flex items-center justify-center gap-2">
+          Odeslat
+        </button>
         <p id="formStatus" class="text-sm mt-4"></p>
       </form>
     </div>
   </section>
 
+  <!-- Discord pozvánka -->
+  <section id="discord" class="py-20 bg-black bg-opacity-80 z-10" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center max-w-xl">
+      <h2 class="text-4xl font-bold mb-4 text-green-400">📣 Přidej se k nám na Discord!</h2>
+      <p class="mb-6 text-gray-400">Zeptej se, najdi tým nebo sleduj novinky přímo u zdroje.</p>
+      <a href="https://discord.gg/xqKvHRJY" target="_blank" class="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full transition hover-glow">
+        Připojit se na Discord
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="bg-black text-center py-6 text-gray-500 mt-12">
+  <footer class="bg-black text-center py-6 text-gray-500 z-10 relative">
     <p>&copy; 2025 Mythic SMP. Jen ti, kdo věří v legendy, přežijí...</p>
   </footer>
 
@@ -111,7 +134,49 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
 
-  <!-- Discord webhook a CAPTCHA logika -->
+  <!-- Hvězdy na pozadí -->
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 100; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        dx: (Math.random() - 0.5) * 0.2,
+        dy: (Math.random() - 0.5) * 0.2
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(0,255,128,0.5)';
+      stars.forEach(s => {
+        s.x += s.dx;
+        s.y += s.dy;
+        if (s.x < 0 || s.x > canvas.width) s.dx *= -1;
+        if (s.y < 0 || s.y > canvas.height) s.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+  </script>
+
+  <!-- Webhook logika -->
   <script>
     const form = document.getElementById('whitelistForm');
     const status = document.getElementById('formStatus');
@@ -152,7 +217,7 @@
         });
 
         if (response.ok) {
-          status.textContent = '✅ Žádost byla odeslána. Odpověď najdeš na Discordu.';
+          status.textContent = '✅ Žádost byla odeslána. Sleduj odpověď na Discordu.';
           status.className = 'text-green-400';
           form.reset();
         } else {
@@ -164,5 +229,6 @@
       }
     });
   </script>
+
 </body>
 </html>
