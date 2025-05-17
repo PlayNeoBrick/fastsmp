@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mythic SMP – Pravidla a Whitelist</title>
+  <title>FAST SMP – Pravidla a Whitelist</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
@@ -35,7 +35,7 @@
   <!-- Úvod -->
   <section class="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-900 via-black to-gray-900 z-10">
     <div class="text-center px-6" data-aos="fade-up">
-      <h1 class="text-5xl text-green-400 drop-shadow-lg mb-6">Mythic SMP</h1>
+      <h1 class="text-5xl text-green-400 drop-shadow-lg mb-6">FAST SMP</h1>
       <p class="text-lg text-gray-300 mb-8 italic">Vstup jen pro vyvolené... přežiješ mezi legendami?</p>
       <a href="#whitelist" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full shadow-lg transition hover:scale-105 hover-glow">
         Žádost o Whitelist
@@ -44,82 +44,93 @@
   </section>
 
   <!-- Pravidla -->
-<section id="rules" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
-  <div class="container mx-auto px-6 text-center max-w-3xl">
-    <h2 class="text-3xl text-green-400 mb-8">⚖️ Pravidla serveru</h2>
+  <section id="rules" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
+      <h2 class="text-3xl text-green-400 mb-8">⚖️ Pravidla serveru</h2>
 
-    <!-- Vyhledávací pole -->
-    <input 
-      type="text" 
-      id="searchRules" 
-      placeholder="🔍 Hledat v pravidlech..." 
-      class="mb-8 w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-    />
+      <input 
+        type="text" 
+        id="searchRules" 
+        placeholder="🔍 Hledat v pravidlech..." 
+        class="mb-8 w-full p-3 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
 
-    <!-- Pravidla -->
-    <div id="rulesList" class="text-left text-gray-400 space-y-6 text-sm leading-relaxed">
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">⛔ Cheaty a exploity</h3>
-        <ul class="list-disc pl-5">
-          <li>Žádné cheaty nebo hacky.</li>
-          <li>Použití zakázaných nástrojů = okamžitý ban.</li>
-        </ul>
+      <div id="rulesList" class="text-left text-gray-400 space-y-6 text-sm leading-relaxed">
+        <!-- (Pravidla zde zůstávají beze změny - viz původní kód) -->
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">⛔ Cheaty a exploity</h3>
+          <ul class="list-disc pl-5">
+            <li>Žádné cheaty nebo hacky.</li>
+            <li>Použití zakázaných nástrojů = okamžitý ban.</li>
+          </ul>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">🛡️ Administrace</h3>
+          <p>Administrátoři mají finální slovo. Respektuj jejich rozhodnutí.</p>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">🚫 End je zakázán</h3>
+          <p>End dimenze je uzavřená pro všechny hráče.</p>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">⚔️ PvP pravidla</h3>
+          <ul class="list-disc pl-5">
+            <li>Combat log = zakázán.</li>
+            <li>BedPvP v Netheru = zakázán.</li>
+            <li>Spawnkill a pasti = zakázány.</li>
+          </ul>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">🏰 Pravidla pro základny</h3>
+          <ul class="list-disc pl-5">
+            <li>Lootovat můžeš.</li>
+            <li>Griefing a ničení vesničanů = zakázáno.</li>
+          </ul>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">🧍 Pravidla chování</h3>
+          <ul class="list-disc pl-5">
+            <li>Sprostá slova tolerujeme, spam ne.</li>
+            <li>Teamy max 4 hráči, aliance max 6.</li>
+          </ul>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">🏹 Teamplay</h3>
+          <ul class="list-disc pl-5">
+            <li>Aliance nesmí bojovat společně proti ostatním.</li>
+          </ul>
+        </div>
+        <div class="rule-item">
+          <h3 class="text-xl text-green-300">📜 Závěrečné</h3>
+          <ul class="list-disc pl-5">
+            <li>Neznalost pravidel neomlouvá.</li>
+            <li>Pravidla se mohou změnit.</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">🛡️ Administrace</h3>
-        <p>Administrátoři mají finální slovo. Respektuj jejich rozhodnutí.</p>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">🚫 End je zakázán</h3>
-        <p>End dimenze je uzavřená pro všechny hráče.</p>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">⚔️ PvP pravidla</h3>
-        <ul class="list-disc pl-5">
-          <li>Combat log = zakázán.</li>
-          <li>BedPvP v Netheru = zakázán.</li>
-          <li>Spawnkill a pasti = zakázány.</li>
-        </ul>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">🏰 Pravidla pro základny</h3>
-        <ul class="list-disc pl-5">
-          <li>Lootovat můžeš.</li>
-          <li>Griefing a ničení vesničanů = zakázáno.</li>
-        </ul>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">🧍 Pravidla chování</h3>
-        <ul class="list-disc pl-5">
-          <li>Sprostá slova tolerujeme, spam ne.</li>
-          <li>Teamy max 4 hráči, aliance max 6.</li>
-        </ul>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">🏹 Teamplay</h3>
-        <ul class="list-disc pl-5">
-          <li>Aliance nesmí bojovat společně proti ostatním.</li>
-        </ul>
-      </div>
-
-      <div class="rule-item">
-        <h3 class="text-xl text-green-300">📜 Závěrečné</h3>
-        <ul class="list-disc pl-5">
-          <li>Neznalost pravidel neomlouvá.</li>
-          <li>Pravidla se mohou změnit.</li>
-        </ul>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Teamy -->
+  <section id="teams" class="py-20 bg-gray-950 z-10" data-aos="fade-up">
+    <div class="container mx-auto px-6 text-center max-w-3xl">
+      <h2 class="text-3xl text-green-400 mb-8">👥 Teamy na FAST SMP</h2>
+      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover-glow">
+          <h3 class="text-xl text-green-300 mb-2">Ahjin</h3>
+          <p>Temní stratégové, kteří útočí ve stínech.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover-glow">
+          <h3 class="text-xl text-green-300 mb-2">NightShade</h3>
+          <p>Mistři nočních nájezdů a rychlých úderů.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover-glow">
+          <h3 class="text-xl text-green-300 mb-2">MACE MASTERS</h3>
+          <p>Válečníci s palcáty, brutální síla a dominance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Whitelist -->
   <section id="whitelist" class="py-20 bg-gray-900 z-10" data-aos="fade-up">
@@ -152,7 +163,7 @@
 
   <!-- Footer -->
   <footer class="bg-black text-center py-6 text-gray-500 z-10 relative text-sm">
-    <p>&copy; 2025 Mythic SMP – Pouze ti, kdo věří v legendy, přežijí...</p>
+    <p>&copy; 2025 FAST SMP – Pouze ti, kdo věří v rychlost a sílu, přežijí...</p>
   </footer>
 
   <!-- Skripty -->
